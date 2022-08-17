@@ -1,0 +1,154 @@
+
+/*PROYECTOS*/
+
+#proyectos{
+    height: 120vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+#proyectos::after{
+    content: "";
+    position: fixed;
+    background: url('../../../assets/img/background-main.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.proyectos-container{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.card{
+    height: 60vh;
+    width: 300px;
+    background: var(--i) center;
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32, 51, 0.8);
+    border: none;
+    color: #fff;
+    border-radius: 50px !important;
+    border: none !important;
+}
+
+
+.card-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    opacity: 0;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card-screen{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50px;
+}
+
+.card-content h3 {
+    color: #fff;
+    text-shadow: 2px 2px 10px #333;
+    font-weight: 300;
+    font-size: 2.2rem;
+}
+
+.card-content h3{
+    position: absolute;
+    bottom: 43%;
+}
+
+.card-title-israel{
+    position: absolute;
+    bottom: 50% !important;
+}
+.card-title-palestina{
+    position: absolute;
+    bottom: 36% !important;
+}
+
+.card-screen:hover{
+    opacity: 1;
+}
+
+.card-content:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+.proyectos-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.proyectos-cards ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.proyectos-cards a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyectos-cards h4{
+    z-index: 2;
+    font-size: 1rem;
+    color: red;
+}
+
+
+.proyectos-cards img{
+    height: 65vh;
+    width: auto;
+    border-radius: 50px;
+    box-shadow: 5px 5px 15px rgb(53, 53, 53, 0.8);
+    border: none;
+}
+
+.proyectos-cards img:hover{
+    opacity: 70%;
+}
+
+*/
+
+

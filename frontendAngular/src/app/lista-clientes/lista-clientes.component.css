@@ -1,0 +1,24 @@
+main{
+    width: 100wv;
+    height: 200vh;
+}
+
+main::after{
+    content: "";
+    position: fixed;
+    background: url('../../assets/img/background-main.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+table{
+    background-color: #fff;
+}
+
+h2{
+    padding-top: 50px;
+}

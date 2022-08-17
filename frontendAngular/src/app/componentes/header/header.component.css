@@ -1,0 +1,102 @@
+
+
+.header-index{
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/*HEADER SLIDER*/
+
+.slider{
+    position: relative;
+    overflow: hidden;
+    height: 85vh;
+    width: 100vw;
+
+}
+
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+
+}
+
+.slide.current{
+    opacity: 1;
+}
+
+.slide .content{
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 600px;
+    background-color: rgba(51, 51, 51, 0.488);
+    color: #fff;
+    padding: 35px;
+}
+
+.slide .content h1{
+    margin-bottom: 10px;
+}
+
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next{
+    position: absolute;
+    right: 15px;
+}
+.buttons button#prev{
+    position: absolute;
+    left: 15px;
+}
+
+.buttons button{
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    padding: 10px 15px;
+    top: 45%;
+}
+
+.buttons button:hover{
+    transition: background-color 0.3s ease-in-out;
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+/*Background Images*/
+.slide:first-child{
+    background: url('../../../assets/img/desierto-pare.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(2){
+    background: url('../../../assets/img/gato-norte.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(3){
+    background: url('../../../assets/img/kabu-duna.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(4){
+    background: url('../../../assets/img/padre-hijo.jpg') no-repeat center bottom/cover;
+}
+.slide:nth-child(5){
+    background: url('../../../assets/img/ruinas-ventana.jpg') no-repeat center bottom/cover;
+}
+.slide:nth-child(6){
+    background: url('../../../assets/img/selva-ruinas.jpg') no-repeat center bottom/cover;
+}

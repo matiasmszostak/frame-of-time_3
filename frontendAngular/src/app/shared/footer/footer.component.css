@@ -1,0 +1,75 @@
+
+/*FOOTER*/
+
+footer{
+    height: 50vh;
+    width: 100vw;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+footer h3{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.footer-logo{
+    width: 60px;
+    height: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+
+.redes-sociales{
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    width: 40vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.redes-sociales a:hover{
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.6;
+}
+
+.redes-sociales .eyeem{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .behance{
+    height: 50px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .instagram{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .linkedin{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .whatsapp{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+
+
+footer h6{
+    font-weight: 100;
+    color: #fff;
+}
+
+footer a{
+    text-decoration: none;
+}

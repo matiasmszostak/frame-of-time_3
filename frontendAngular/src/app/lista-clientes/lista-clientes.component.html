@@ -1,0 +1,33 @@
+<main class="main-clientes">
+
+
+<div class="container">
+
+
+  <h2>Lista clientes</h2>
+
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Motivo de consulta</th>
+        <th>Mensaje</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.motivoConsulta}}</td>
+        <td>{{cliente.mensaje}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+</main>

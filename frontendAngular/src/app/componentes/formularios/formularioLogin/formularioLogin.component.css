@@ -1,0 +1,51 @@
+
+/* MAIN LOGIN */
+.main-login{
+    height: 120vh;
+    width: 100vw;
+    position: relative;
+}
+.main-login-form{
+    padding-left: 150px;
+    padding-top: 150px;
+}
+
+.main-login::after{
+    content: "";
+    position: fixed;
+    background: url('../../../../assets/img/background-main.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.login-logo{
+    margin-top: -20px;
+    margin-right: 10px;
+    height: 60px;
+    width: auto;
+}
+
+
+.login-container-buda{
+    width: 40%;
+    height: 100%;
+}
+
+.login-foto-buda{
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    object-fit: cover;
+    object-position: top;
+}
+
+.btn-login{
+    text-align: center;
+}

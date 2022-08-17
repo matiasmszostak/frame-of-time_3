@@ -1,0 +1,91 @@
+<section id="contacto" class="contacto-form">
+    <h2>Contacto</h2>
+
+    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+
+        <div class="form-group">
+            <label class="form-label" for="nombre">Nombre<br>
+                <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel"
+                    [(ngModel)]="cliente.nombre" required>
+
+
+
+                <small [hidden]="nombre.valid || nombre.pristine" class="text-danger">Nombre es un campo
+                    requerido</small>
+
+
+
+            </label>
+            <label class="form-label" for="email">Email<br>
+                <input type="email" class="form-control" id="form-email" name="email" [(ngModel)]="cliente.email"
+                    #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+
+
+                <div *ngIf="email.touched">
+                    <small class="text-danger" *ngIf="email.errors?.['required']">Email es un campo requerido</small>
+                    <small class="text-danger" *ngIf="email.errors?.['pattern']">Valor de email inválido</small>
+                </div>
+
+
+            </label>
+
+            <legend class="titulo">
+                Consulta sobre
+
+            </legend>
+
+
+            <div class="option">
+                <label>
+                    <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta"
+                        value="Servicio fotográfico" checked="checked">
+                    Servicio fotográfico
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta"
+                        value="Servicio audiovisual"> Servicio audiovisual
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta" value="Servicio de Drone">
+                    Servicio de Drone
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta"
+                        value="Comprar fotografías"> Comprar fotografías
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta"
+                        value="Licencia de imágenes"> Licencia de imágenes
+                </label>
+            </div>
+
+
+
+            <label class="form-label" for="mensaje">Mensaje<br>
+                <textarea name="mensaje" id="form-mensaje" #mensaje="ngModel" cols="10" rows="5"
+                    [(ngModel)]="cliente.mensaje" placeholder="Deje su mensaje"></textarea>
+            </label>
+
+            <small [hidden]="mensaje.valid || mensaje.pristine" class="text-danger">Mensaje requerido (entre 10 y 1000
+                caracteres)</small>
+            <div *ngIf="mensaje.touched">
+                <small class="text-danger" *ngIf="mensaje.errors?.['required']">Email es un campo requerido</small>
+            </div>
+
+            
+
+        </div>
+
+        <button type="submit" [disabled]="!myForm.form.valid" class="btn btn-outline-dark">Enviar</button>
+    </form>
+
+</section>

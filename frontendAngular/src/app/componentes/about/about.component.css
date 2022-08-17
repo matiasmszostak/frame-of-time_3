@@ -1,0 +1,57 @@
+
+/*ABOUT INDEX*/
+
+
+.about{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.about-text{
+    width: 40vw;
+    height: 100vh;
+    padding-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+}
+.about-text p{
+    margin-top: 50px;
+}
+p{
+    text-align: justify;
+}
+
+.about-foto{
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#foto-perfil{
+    height: 90vh;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #33333350;
+}
+
+.about::after{
+    content: "";
+    position: fixed;
+    background: url('../../../assets/img/background-main.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}

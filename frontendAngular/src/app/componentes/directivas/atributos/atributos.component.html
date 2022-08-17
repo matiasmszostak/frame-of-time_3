@@ -1,0 +1,26 @@
+<p>atributos works!</p>
+
+
+<h3>{{titulo}}</h3>
+
+<h5><u>ngStyle</u></h5>
+
+<p [ngStyle]="{'background-color': !amarillo ? 'red' : 'yellow', 'color': 'red'}">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Aliquid iste laudantium molestias nemo nostrum,
+  omnis possimus quibusdam repellendus repudiandae soluta.
+  Commodi cumque ducimus iste iure maxime nam recusandae ullam voluptatem.
+</p>
+
+<div>
+  <button class="btn btn-succes" (click)="amarillo=!amarillo" ></button>
+  Cambiar Fondo
+</div>
+
+<h5>
+  <u>ngClass</u>
+</h5>
+
+<button [ngClass]="{'btn': 'true', 'btn-warning' : 'true', 'btn-danger' : 'false'}"}>
+  Cambiar clase del botón
+</button>

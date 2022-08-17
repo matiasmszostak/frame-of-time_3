@@ -1,0 +1,38 @@
+
+nav{
+    position: relative;
+    width: 100vw;
+    height: 15vh;
+    font-size: 1.3rem;
+    overflow-x: hidden;
+}
+
+
+.nav-title{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+nav h3{
+    position: absolute;
+    color: #fff;
+    right: 130px;
+}
+
+.nav-logo{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    z-index: 3;
+    width: 60px;
+    height: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+
+.nav-logo:hover{
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.6;
+}
+
+li { cursor: pointer; }
