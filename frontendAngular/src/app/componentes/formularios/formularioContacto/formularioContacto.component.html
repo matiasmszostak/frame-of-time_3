@@ -33,16 +33,17 @@
             <legend class="titulo">
                 Consulta sobre
 
-            </legend>
+
 
 
             <div class="option">
                 <label>
                     <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta"
-                        value="Servicio fotográfico" checked="checked">
+                        value="Servicio fotográfico" checked>
                     Servicio fotográfico
                 </label>
             </div>
+
             <div class="option">
                 <label>
                     <input type="radio" name="servicio" [(ngModel)]="cliente.motivoConsulta"
@@ -68,7 +69,7 @@
                 </label>
             </div>
 
-
+            </legend>
 
             <label class="form-label" for="mensaje">Mensaje<br>
                 <textarea name="mensaje" id="form-mensaje" #mensaje="ngModel" cols="10" rows="5"

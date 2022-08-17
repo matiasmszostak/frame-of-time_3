@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//Service
+import {MyScriptService} from "./services/my-script.service"
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EstructuraComponent } from './componentes/directivas/estructura/estructura.component';
@@ -36,7 +40,9 @@ import { CommonModule } from '@angular/common';
     FormulariosModule,
     CommonModule
   ],
-  providers: [],
+  providers: [
+    MyScriptService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
