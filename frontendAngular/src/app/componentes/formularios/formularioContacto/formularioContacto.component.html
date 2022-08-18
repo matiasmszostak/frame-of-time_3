@@ -10,13 +10,19 @@
                     [(ngModel)]="cliente.nombre" required>
 
 
-
+                    <div *ngIf="nombre.touched">
+                        <small class="text-danger" *ngIf="nombre.errors?.['required']">Nombre es un campo requerido</small>
+                    </div>
+<!-- 
                 <small [hidden]="nombre.valid || nombre.pristine" class="text-danger">Nombre es un campo
-                    requerido</small>
+                    requerido</small> -->
 
 
 
             </label>
+
+
+
             <label class="form-label" for="email">Email<br>
                 <input type="email" class="form-control" id="form-email" name="email" [(ngModel)]="cliente.email"
                     #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
@@ -71,16 +77,31 @@
 
             </legend>
 
+
+
+
             <label class="form-label" for="mensaje">Mensaje<br>
-                <textarea name="mensaje" id="form-mensaje" #mensaje="ngModel" cols="10" rows="5"
-                    [(ngModel)]="cliente.mensaje" placeholder="Deje su mensaje"></textarea>
+                <textarea name="mensaje" id="mensaje" #mensaje="ngModel" cols="10" rows="5"
+                    [(ngModel)]="cliente.mensaje" placeholder="Deje su mensaje" class="form-control" required></textarea>
+
+
+                <div *ngIf="mensaje.touched">
+                    <small class="text-danger" *ngIf="mensaje.errors?.['required']">Mensaje es un campo requerido</small>
+                </div>
+
             </label>
 
-            <small [hidden]="mensaje.valid || mensaje.pristine" class="text-danger">Mensaje requerido (entre 10 y 1000
+
+
+
+            
+            <!-- <small [hidden]="mensaje.valid || mensaje.pristine" class="text-danger">Mensaje requerido (entre 10 y 1000
                 caracteres)</small>
+
+                
             <div *ngIf="mensaje.touched">
                 <small class="text-danger" *ngIf="mensaje.errors?.['required']">Email es un campo requerido</small>
-            </div>
+            </div> -->
 
             
 
