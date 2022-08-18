@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/cliente';
 import { ClienteService } from '../../../cliente.service';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -46,9 +46,10 @@ export class FormularioContactoComponent implements OnInit {
     this.clienteServicio.registrarCliente(this.cliente).subscribe(dato => {
       console.log(dato);
       //    this.irALaListaDeClientes();   va a la lista de clientes, no lo voy a usar
-    });
+    },error => console.log(error));
   }
 
+  //sin usar
   irALaListaDeClientes() {
     this.router.navigate(['/clientes'])
   }
@@ -56,18 +57,19 @@ export class FormularioContactoComponent implements OnInit {
 
   enviado = false;
 
-  onSubmit() {
+  enviarFormulario(myForm: NgForm) {
 
 
     this.guardarCliente();
     console.log(this.cliente);
     this.cliente = new Cliente();
-    this.myForm.reset();
+    myForm.form.reset();
 
-    /*    this.myForm.markAsPristine();
+    /*  this.myForm.markAsPristine();
         this.myForm.markAsUntouched();
+        this.myForm.updateValueAndValidity();
             */
-    this.myForm.updateValueAndValidity();
+
   }
 
 }

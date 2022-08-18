@@ -65,3 +65,6 @@ textarea::placeholder{
     font-size: 1rem;
 }
 
+small{
+    font-weight: 400;
+}

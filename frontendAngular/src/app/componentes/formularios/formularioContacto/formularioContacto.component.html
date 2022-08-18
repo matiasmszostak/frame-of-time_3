@@ -1,22 +1,22 @@
 <section id="contacto" class="contacto-form">
     <h2>Contacto</h2>
 
-    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form-outline mb-4" #myForm="ngForm" autocomplete="off" (ngSubmit)="enviarFormulario(myForm)">
 
 
         <div class="form-group">
             <label class="form-label" for="nombre">Nombre<br>
-                <input type="text" class="form-control" id="nombre" name="nombre" #nombre="ngModel"
-                    [(ngModel)]="cliente.nombre" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" #nombreControl="ngModel"
+                    [(ngModel)]="cliente.nombre" minlength="2" required>
 
 
-                    <div *ngIf="nombre.touched">
-                        <small class="text-danger" *ngIf="nombre.errors?.['required']">Nombre es un campo requerido</small>
+                    <div *ngIf="nombreControl.invalid && nombreControl.touched">
+                        <small class="text-danger" *ngIf="nombreControl.errors?.['required']">Nombre es un campo requerido</small>
+                        <small class="text-danger" *ngIf="nombreControl.errors?.['minlength']">Su nombre debe contener al menos 2 caracteres</small>
                     </div>
 <!-- 
                 <small [hidden]="nombre.valid || nombre.pristine" class="text-danger">Nombre es un campo
                     requerido</small> -->
-
 
 
             </label>
@@ -25,12 +25,12 @@
 
             <label class="form-label" for="email">Email<br>
                 <input type="email" class="form-control" id="form-email" name="email" [(ngModel)]="cliente.email"
-                    #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    #emailControl="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
 
-                <div *ngIf="email.touched">
-                    <small class="text-danger" *ngIf="email.errors?.['required']">Email es un campo requerido</small>
-                    <small class="text-danger" *ngIf="email.errors?.['pattern']">Valor de email inválido</small>
+                <div *ngIf="emailControl.touched">
+                    <small class="text-danger" *ngIf="emailControl.errors?.['required']">Email es un campo requerido</small>
+                    <small class="text-danger" *ngIf="emailControl.errors?.['pattern']">Valor de email inválido</small>
                 </div>
 
 
@@ -81,12 +81,14 @@
 
 
             <label class="form-label" for="mensaje">Mensaje<br>
-                <textarea name="mensaje" id="mensaje" #mensaje="ngModel" cols="10" rows="5"
-                    [(ngModel)]="cliente.mensaje" placeholder="Deje su mensaje" class="form-control" required></textarea>
+                <textarea name="mensaje" id="mensaje" #mensajeControl="ngModel" cols="10" rows="5"
+                    [(ngModel)]="cliente.mensaje" placeholder="Deje su mensaje" class="form-control" required  minlength="10"  maxlength="1000"></textarea>
 
 
-                <div *ngIf="mensaje.touched">
-                    <small class="text-danger" *ngIf="mensaje.errors?.['required']">Mensaje es un campo requerido</small>
+                <div *ngIf="mensajeControl.touched">
+                    <small class="text-danger" *ngIf="mensajeControl.errors?.['required']">Mensaje es un campo requerido</small>
+
+                    <small class="text-danger" *ngIf="mensajeControl.errors?.['minlength']">El mensaje debe contener al menos 10 caracteres</small>
                 </div>
 
             </label>
