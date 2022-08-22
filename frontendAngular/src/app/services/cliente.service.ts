@@ -20,6 +20,7 @@ obtenerListaDeClientes():Observable<Cliente[]>{
   return this.httpClient.get<Cliente[]>(`${this.baseURL}`);
 }
 
+//promise
 //metodo para registrar contactos de clientes
 registrarCliente(cliente:Cliente) : Observable<Object>{
   return this.httpClient.post(`${this.baseURL}`, cliente);

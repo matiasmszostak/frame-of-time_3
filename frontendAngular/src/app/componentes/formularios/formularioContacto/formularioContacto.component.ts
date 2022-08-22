@@ -64,6 +64,7 @@ export class FormularioContactoComponent implements OnInit {
     console.log(this.cliente);
     this.cliente = new Cliente();
     myForm.form.reset();
+    alert("¡Mensaje enviado!");
 
     /*  this.myForm.markAsPristine();
         this.myForm.markAsUntouched();

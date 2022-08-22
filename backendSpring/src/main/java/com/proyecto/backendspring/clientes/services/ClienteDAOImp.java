@@ -21,13 +21,17 @@ public class ClienteDAOImp implements ClienteDAO{
     }
 
     @Override
-    public Cliente altaNuevoCliente(Cliente cliente) {
+    public Cliente altaNuevoCliente(Cliente cliente) throws Exception {
         if(this.clienteRepositorio
                 .findClienteByEmail(cliente.getEmail().trim()) // busco al cliente por email, trimmeo los espacios en blanco si hay
                 .isPresent()){ // si está presente, no hago nada, para no duplicar al cliente
-            throw new RuntimeException("El cliente con email "+ cliente.getEmail() + ", ya existe"); // Excepción, error
+            throw new Exception("El cliente con email "+ cliente.getEmail() + ", ya existe"); // Excepción, error
         }
+        //El condicional de arriba no es necesario en este proyecto, lo puse solo para probar lo visto en clase
 
         return this.clienteRepositorio.save(cliente); // guardo al cliente en la DB
     }
 }
+
+
+// RuntimeException no se catchea, es una mala práctica. Se usa directamente Exception.

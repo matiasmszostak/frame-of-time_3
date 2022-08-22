@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200/") //para conectar con el frontend sin problemas de CORS (seguridad)
 public class ClienteControlador {
 
     @Autowired
@@ -41,14 +41,14 @@ public class ClienteControlador {
 
     //guardar un cliente
     @PostMapping()
-    public ResponseEntity<?> guardarCliente(@RequestBody Cliente cliente){
+    public ResponseEntity<?> guardarCliente(@RequestBody Cliente cliente){ // El '?' va porque el catch Exception puede devolver un objeto que no es el de mi entidad
         Cliente clienteReturn = null; //inicializo variable en null
 
         //Try Catch, para atajar el error que definí en el servicio. Si el cliente ya existe, devuelve el mensaje de error
         try{
             clienteReturn = this.servicio.altaNuevoCliente(cliente); // si sale bien, se guarda en la variable
 
-        }catch (RuntimeException e){
+        }catch (Exception e){
             return ResponseEntity
                     .badRequest()
                     .body(e.getMessage());

@@ -10,6 +10,6 @@ public interface ClienteDAO {
 
     Optional<Cliente> buscarClientePorEmail(String email);
 
-    Cliente altaNuevoCliente(Cliente cliente);
+    Cliente altaNuevoCliente(Cliente cliente) throws Exception;
 
 }
